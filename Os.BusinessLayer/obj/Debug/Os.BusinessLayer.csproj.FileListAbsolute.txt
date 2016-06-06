@@ -1,0 +1,5 @@
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.BusinessLayer\bin\Debug\Os.BusinessLayer.dll
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.BusinessLayer\bin\Debug\Os.BusinessLayer.pdb
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.BusinessLayer\obj\Debug\Os.BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.BusinessLayer\obj\Debug\Os.BusinessLayer.dll
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.BusinessLayer\obj\Debug\Os.BusinessLayer.pdb
