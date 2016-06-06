@@ -18,6 +18,20 @@ namespace Os.BusinessTests
             //assert
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod()]
+        public void PrintProductTestWithParamConstructor()
+        {
+            //arrange
+            var product = new Product(1,"Ladder","10 feet");
+            var expected = "It's Ladder (1): 10 feet";
+            //act
+            var actual = product.PrintProduct();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
 

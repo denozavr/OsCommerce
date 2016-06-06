@@ -11,6 +11,21 @@ namespace Os.BusinessLayer
     /// </summary>
     public class Product
     {
+        public Product()
+        {
+            Console.WriteLine("Product instance was created.");
+        }
+
+        public Product(int productId, string productName, string description) : this()
+        {
+            this.ProductId = productId;
+            this.ProductName = productName;
+            this.Description = description;
+
+            Console.WriteLine("Product with " + productName + " name was created.");
+        }
+
+
         private string productName;
         
         public string ProductName
