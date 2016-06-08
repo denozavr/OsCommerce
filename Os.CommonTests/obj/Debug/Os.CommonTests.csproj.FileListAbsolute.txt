@@ -1,0 +1,9 @@
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.CommonTests\bin\Debug\Os.CommonTests.dll
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.CommonTests\bin\Debug\Os.CommonTests.pdb
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.CommonTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.CommonTests\bin\Debug\Os.Common.dll
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.CommonTests\bin\Debug\Os.Common.pdb
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.CommonTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.CommonTests\obj\Debug\Os.CommonTests.csprojResolveAssemblyReference.cache
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.CommonTests\obj\Debug\Os.CommonTests.dll
+C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.CommonTests\obj\Debug\Os.CommonTests.pdb
