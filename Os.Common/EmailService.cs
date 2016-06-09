@@ -17,7 +17,7 @@ namespace Os.Common
         /// <returns></returns>
         public string SendMessage(string subject, string message, string recipient)
         {
-            var confirmation = "Message sent" + subject;
+            var confirmation = "Message sent: " + subject;
             LoggingService.LogAction(confirmation);
 
             return confirmation;
