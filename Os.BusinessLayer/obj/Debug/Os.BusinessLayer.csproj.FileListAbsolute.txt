@@ -3,3 +3,5 @@ C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.BusinessLayer\b
 C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.BusinessLayer\obj\Debug\Os.BusinessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.BusinessLayer\obj\Debug\Os.BusinessLayer.dll
 C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.BusinessLayer\obj\Debug\Os.BusinessLayer.pdb
+C:\Users\Den\documents\visual studio 2015\Projects\OsCommerce\Os.BusinessLayer\bin\Debug\Os.Common.dll
+C:\Users\Den\documents\visual studio 2015\Projects\OsCommerce\Os.BusinessLayer\bin\Debug\Os.Common.pdb

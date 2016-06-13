@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Os.Common;
 
 namespace Os.BusinessLayer
 {
@@ -11,6 +12,7 @@ namespace Os.BusinessLayer
     /// </summary>
     public class Product
     {
+        #region Constructors
         public Product()
         {
             Console.WriteLine("Product instance was created.");
@@ -24,10 +26,12 @@ namespace Os.BusinessLayer
 
             Console.WriteLine("Product with " + productName + " name was created.");
         }
+        #endregion
 
 
+        #region Properties
         private string productName;
-        
+
         public string ProductName
         {
             get { return productName; }
@@ -48,10 +52,15 @@ namespace Os.BusinessLayer
         {
             get { return productId; }
             set { productId = value; }
-        }
+        } 
+        #endregion
 
         public string PrintProduct()
         {
+            var emailService = new EmailService();
+            var confirmation = emailService.SendMessage("New Product",
+                this.ProductName, "sales@abc.com");
+
             return "It's " + productName + " (" + productId + "): " + description;
         }
 
