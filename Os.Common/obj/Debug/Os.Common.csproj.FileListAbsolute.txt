@@ -1,5 +1,0 @@
-C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.Common\bin\Debug\Os.Common.dll
-C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.Common\bin\Debug\Os.Common.pdb
-C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.Common\obj\Debug\Os.Common.csprojResolveAssemblyReference.cache
-C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.Common\obj\Debug\Os.Common.dll
-C:\Users\Den\Documents\Visual Studio 2015\Projects\OsCommerce\Os.Common\obj\Debug\Os.Common.pdb
