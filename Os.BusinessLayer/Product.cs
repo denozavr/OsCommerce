@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Os.Common;
+using static Os.Common.LoggingService;
 
 namespace Os.BusinessLayer
 {
@@ -16,6 +17,8 @@ namespace Os.BusinessLayer
         public Product()
         {
             Console.WriteLine("Product instance was created.");
+            //always create Vendor object with product object
+            //this.productVendor =new Vendor();
         }
 
         public Product(int productId, string productName, string description) : this()
@@ -52,7 +55,24 @@ namespace Os.BusinessLayer
         {
             get { return productId; }
             set { productId = value; }
-        } 
+        }
+
+
+        private Vendor productVendor;
+
+        //create Vendor object sometimes,i.e. when it requested (Lazy loading)
+        public Vendor ProductVendor
+        {
+            get
+            {
+                if (productVendor == null)
+                {
+                    productVendor = new Vendor();
+                }
+                return productVendor;
+            }
+            set { productVendor = value; }
+        }
         #endregion
 
         public string PrintProduct()
@@ -60,6 +80,8 @@ namespace Os.BusinessLayer
             var emailService = new EmailService();
             var confirmation = emailService.SendMessage("New Product",
                 this.ProductName, "sales@abc.com");
+
+            var result = LogAction("Print Product");
 
             return "It's " + productName + " (" + productId + "): " + description;
         }

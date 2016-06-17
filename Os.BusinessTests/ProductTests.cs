@@ -11,7 +11,9 @@ namespace Os.BusinessTests
         {
             //arrange
             var product = new Product() {ProductName = "Ladder", ProductId = 1, Description = "10 feet"};
+            product.ProductVendor.CompanyName = "NanoSoft";
             var expected = "It's Ladder (1): 10 feet";
+            
             //act
             var actual = product.PrintProduct();
 
