@@ -13,9 +13,8 @@ namespace Os.BusinessLayer
     /// </summary>
     public class Product
     {
-        /// <summary>
-        /// 
-        /// </summary>
+        public const double InchesInMeter = 39.37;
+
         #region Constructors
         public Product()
         {

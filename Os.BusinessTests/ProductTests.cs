@@ -57,6 +57,19 @@ namespace Os.BusinessTests
         }
 
 
+        [TestMethod()]
+        public void ConvertMetersToInches()
+        {
+            //arrange
+            var expected = 78.74;
+            
+            //act
+            var actual = 2*Product.InchesInMeter;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
 
