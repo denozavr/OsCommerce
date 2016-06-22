@@ -14,6 +14,7 @@ namespace Os.BusinessLayer
     public class Product
     {
         public const double InchesInMeter = 39.37;
+        public readonly decimal MinPrice;
 
         #region Constructors
         public Product()
@@ -21,6 +22,7 @@ namespace Os.BusinessLayer
             Console.WriteLine("Product instance was created.");
             //always create Vendor object with product object
             //this.productVendor =new Vendor();
+            this.MinPrice = .96m;
         }
 
         public Product(int productId, string productName, string description) : this()
@@ -28,7 +30,10 @@ namespace Os.BusinessLayer
             this.ProductId = productId;
             this.ProductName = productName;
             this.Description = description;
-
+            if (productName.StartsWith("Bulk"))
+            {
+                this.MinPrice = 9.99m;
+            }
             Console.WriteLine("Product with " + productName + " name was created.");
         }
         #endregion

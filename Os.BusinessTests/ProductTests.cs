@@ -70,6 +70,34 @@ namespace Os.BusinessTests
             Assert.AreEqual(expected, actual);
         }
 
+
+        [TestMethod()]
+        public void MinimumPriceDefault()
+        {
+            //arrange
+            var currentProduct = new Product();
+            var expected = .96m;
+
+            //act
+            var actual = currentProduct.MinPrice;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void MinimumPriceBulk()
+        {
+            //arrange
+            var currentProduct = new Product(1,"Bulk Test","");
+            var expected = 9.99m;
+
+            //act
+            var actual = currentProduct.MinPrice;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
 
