@@ -16,8 +16,9 @@ namespace Os.BusinessTests
                 ProductId = 1,
                 Description = "10 feet",
                 ProductVendor = {CompanyName = "NanoSoft"}
+
             };
-            var expected = "It's Ladder (1): 10 feet";
+            var expected = "It's Ladder (1): 10 feet" + " Available on: ";
             
             //act
             var actual = product.PrintProduct();
@@ -31,7 +32,7 @@ namespace Os.BusinessTests
         {
             //arrange
             var product = new Product(1,"Ladder","10 feet");
-            var expected = "It's Ladder (1): 10 feet";
+            var expected = "It's Ladder (1): 10 feet" + " Available on: ";
             //act
             var actual = product.PrintProduct();
 

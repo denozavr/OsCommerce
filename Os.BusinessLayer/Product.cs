@@ -36,6 +36,16 @@ namespace Os.BusinessLayer
 
 
         #region Properties
+        private DateTime? availabilityDate;
+
+        public DateTime? AvailabilityDate
+        {
+            get { return availabilityDate; }
+            set { availabilityDate = value; }
+        }
+
+
+
         private string productName;
 
         public string ProductName
@@ -86,7 +96,8 @@ namespace Os.BusinessLayer
 
             var result = LogAction("Print Product");
 
-            return "It's " + productName + " (" + productId + "): " + description;
+            return "It's " + productName + " (" + productId + "): " + description + 
+                " Available on: " + availabilityDate?.ToShortDateString();
         }
 
     }
