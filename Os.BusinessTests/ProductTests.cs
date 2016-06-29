@@ -98,6 +98,80 @@ namespace Os.BusinessTests
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod()]
+        public void ProductName_Format()
+        {
+            //arrange
+            var currentProduct = new Product();
+            currentProduct.ProductName = " Screwdriver     ";
+
+            var expected = "Screwdriver";
+
+            //act
+            var actual = currentProduct.ProductName;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void ProductName_TooShort()
+        {
+            //Arrange
+            var currentProduct = new Product();
+            currentProduct.ProductName = "aw";
+
+            string expected = null;
+            string expectedMessage = "Product Name must be at least 3 characters";
+
+            //Act
+            var actual = currentProduct.ProductName;
+            var actualMessage = currentProduct.ErrorMessage;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedMessage, actualMessage);
+        }
+
+        [TestMethod()]
+        public void ProductName_TooLong()
+        {
+            //Arrange
+            var currentProduct = new Product();
+            currentProduct.ProductName = "Steel Bladed Hand Saw For Very Big Trees";
+
+            string expected = null;
+            string expectedMessage = "Product Name cannot be more than 30 characters";
+
+            //Act
+            var actual = currentProduct.ProductName;
+            var actualMessage = currentProduct.ErrorMessage;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedMessage, actualMessage);
+        }
+
+        [TestMethod()]
+        public void ProductName_JustRight()
+        {
+            //Arrange
+            var currentProduct = new Product();
+            currentProduct.ProductName = "Saw";
+
+            string expected = "Saw";
+            string expectedMessage = null;
+
+            //Act
+            var actual = currentProduct.ProductName;
+            var actualMessage = currentProduct.ErrorMessage;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedMessage, actualMessage);
+        }
+
     }
 }
 

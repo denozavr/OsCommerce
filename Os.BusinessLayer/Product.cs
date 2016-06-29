@@ -54,9 +54,29 @@ namespace Os.BusinessLayer
 
         public string ProductName
         {
-            get { return productName; }
-            set { productName = value; }
+            get
+            {
+                var formattedValue = productName?.Trim();
+                return formattedValue;
+            }
+            set
+            {
+                if (value.Length < 3)
+                {
+                    ErrorMessage = "Product Name must be at least 3 characters";
+                }
+                else if(value.Length > 30)
+                {
+                    ErrorMessage = "Product Name cannot be more than 30 characters";
+                }
+                else
+                {
+                    productName = value;
+                }
+            }
         }
+
+        public string ErrorMessage { get; set; }
 
         private string description;
 
