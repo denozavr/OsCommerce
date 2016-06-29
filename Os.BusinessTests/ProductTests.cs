@@ -120,7 +120,7 @@ namespace Os.BusinessTests
         {
             //Arrange
             var currentProduct = new Product();
-            currentProduct.ProductName = "aw";
+            currentProduct.ProductName = "it";
 
             string expected = null;
             string expectedMessage = "Product Name must be at least 3 characters";
@@ -158,9 +158,9 @@ namespace Os.BusinessTests
         {
             //Arrange
             var currentProduct = new Product();
-            currentProduct.ProductName = "Saw";
+            currentProduct.ProductName = "Hammer";
 
-            string expected = "Saw";
+            string expected = "Hammer";
             string expectedMessage = null;
 
             //Act
@@ -172,6 +172,22 @@ namespace Os.BusinessTests
             Assert.AreEqual(expectedMessage, actualMessage);
         }
 
+
+        [TestMethod()]
+        public void Category_DefaultValue()
+        {
+            //Arrange
+            var currentProduct = new Product();
+
+            var expected = "Home";
+
+            //Act
+            var actual = currentProduct.Category;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        
     }
 }
 

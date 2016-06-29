@@ -23,6 +23,7 @@ namespace Os.BusinessLayer
             //always create Vendor object with product object
             //this.productVendor =new Vendor();
             this.MinPrice = .96m;
+            this.Category = "Home";
         }
 
         public Product(int productId, string productName, string description) : this()
@@ -75,9 +76,7 @@ namespace Os.BusinessLayer
                 }
             }
         }
-
-        public string ErrorMessage { get; set; }
-
+        
         private string description;
 
         public string Description
@@ -110,6 +109,11 @@ namespace Os.BusinessLayer
             }
             set { productVendor = value; }
         }
+
+        public string ErrorMessage { get; set; }
+        public string Category { get; set; }
+        public int SequenceNumber { get; set; } = 1;
+
         #endregion
 
         public string PrintProduct()
