@@ -111,7 +111,7 @@ namespace Os.BusinessLayer
         }
 
         public string ErrorMessage { get; set; }
-        public string Category { get; set; }
+        internal string Category { get; set; }
         public int SequenceNumber { get; set; } = 1;
 
         #endregion
