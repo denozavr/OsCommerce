@@ -187,7 +187,23 @@ namespace Os.BusinessTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        
+
+        [TestMethod()]
+        public void ProductCode_DefaultValue()
+        {
+            //Arrange
+            var currentProduct = new Product() {SequenceNumber = 232, Category = "Nails"};
+            
+
+            var expected = "Nails-232";
+
+            //Act
+            var actual = currentProduct.ProductCode;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
 

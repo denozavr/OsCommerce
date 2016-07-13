@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Os.Common;
@@ -113,6 +114,7 @@ namespace Os.BusinessLayer
         public string ErrorMessage { get; set; }
         internal string Category { get; set; }
         public int SequenceNumber { get; set; } = 1;
+        public string ProductCode => this.Category + "-" + this.SequenceNumber;
 
         #endregion
 
