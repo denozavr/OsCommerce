@@ -17,6 +17,36 @@ namespace Os.BusinessLayer
         public string Email { get; set; }
 
         /// <summary>
+        /// Sends product to vendor
+        /// </summary>
+        /// <param name="product">What to order</param>
+        /// <param name="quantity">How much to order?</param>
+        /// <returns></returns>
+        public bool PlaceOrder(Product product,int quantity)
+        {
+            if(product == null)
+                throw new ArgumentNullException(nameof(product));//"product" before c# 6
+            if (quantity <= 0)
+                throw new ArgumentNullException(nameof(quantity));
+
+            var success = false;
+
+            var orderText = "Order from Acme, Inc" + System.Environment.NewLine +
+                            "Product: " + product.ProductCode +
+                                                    System.Environment.NewLine +
+                            "Quantity: " + quantity;
+            
+            var emailService = new EmailService();
+            var confirmation = emailService.SendMessage("New Order", orderText,
+                                                                     this.Email);
+            if (confirmation.StartsWith("Message sent:"))
+            {
+                success = true;
+            }
+            return success;
+        }
+
+        /// <summary>
         /// Sends an email to welcome a new vendor.
         /// </summary>
         /// <returns></returns>
