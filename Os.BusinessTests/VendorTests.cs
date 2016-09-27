@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Os.BusinessLayer;
+using Os.Common;
 
 namespace Os.BusinessTests
 {
@@ -62,13 +63,15 @@ namespace Os.BusinessTests
             // Arrange
             var vendor = new Vendor();
             var product = new Product(1, "Nails", "");
-            var expected = true;
+            var expected = new OperationResult(true,
+                "Order from OsCom\r\nProduct: Home-1\r\nQuantity: 99");
 
             // Act
             var actual = vendor.PlaceOrder(product, 99);
 
             // Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected.Success, actual.Success);
+            Assert.AreEqual(expected.Message, actual.Message);
         }
 
         [TestMethod()]

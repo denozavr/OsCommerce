@@ -22,7 +22,7 @@ namespace Os.BusinessLayer
         /// <param name="product">What to order</param>
         /// <param name="quantity">How much to order?</param>
         /// <returns></returns>
-        public bool PlaceOrder(Product product,int quantity)
+        public OperationResult PlaceOrder(Product product,int quantity)
         {
             if(product == null)
                 throw new ArgumentNullException(nameof(product));//"product" before c# 6
@@ -31,9 +31,8 @@ namespace Os.BusinessLayer
 
             var success = false;
 
-            var orderText = "Order from Acme, Inc" + System.Environment.NewLine +
-                            "Product: " + product.ProductCode +
-                                                    System.Environment.NewLine +
+            var orderText = "Order from OsCom" + Environment.NewLine +
+                            "Product: " + product.ProductCode + Environment.NewLine +
                             "Quantity: " + quantity;
             
             var emailService = new EmailService();
@@ -43,7 +42,8 @@ namespace Os.BusinessLayer
             {
                 success = true;
             }
-            return success;
+            var operationResult = new OperationResult(success,orderText);
+            return operationResult;
         }
 
         /// <summary>
