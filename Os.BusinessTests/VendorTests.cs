@@ -58,21 +58,23 @@ namespace Os.BusinessTests
         }
 
         [TestMethod()]
-        public void PlaceOrderTest()
+        public void PlaceOrderTestWithDate()
         {
             // Arrange
             var vendor = new Vendor();
             var product = new Product(1, "Nails", "");
             var expected = new OperationResult(true,
-                "Order from OsCom\r\nProduct: Home-1\r\nQuantity: 99");
+                "Order from OsCom\r\nProduct: Home-1\r\nQuantity: 99\r\nDeliver By: 30.09.2016");
 
             // Act
-            var actual = vendor.PlaceOrder(product, 99);
+            var actual = vendor.PlaceOrder(product, 99,
+                                new DateTimeOffset(2016,9,30,0,0,0,new TimeSpan(-3,0,0)));
 
             // Assert
             Assert.AreEqual(expected.Success, actual.Success);
             Assert.AreEqual(expected.Message, actual.Message);
         }
+
 
         [TestMethod()]
         [ExpectedException(typeof(ArgumentNullException))]
@@ -82,7 +84,7 @@ namespace Os.BusinessTests
             var vendor = new Vendor();
 
             // Act
-            var actual = vendor.PlaceOrder(null, 100);
+            var actual = vendor.PlaceOrder(null, 100,null);
 
             // Expected exception
         }
