@@ -130,5 +130,9 @@ namespace Os.BusinessLayer
                 " Available on: " + availabilityDate?.ToShortDateString();
         }
 
+        public override string ToString()
+        {
+            return this.productName + "(" + productId + ")";
+        }
     }
 }
