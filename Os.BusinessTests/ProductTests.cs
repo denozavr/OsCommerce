@@ -204,6 +204,20 @@ namespace Os.BusinessTests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod()]
+        public void CalculateSuggestedPriceTest()
+        {
+            // Arrange
+            var currentProduct = new Product(1, "Nails", "");
+            currentProduct.Cost = 20m;
+            var expected = 22m;
+
+            // Act
+            var actual = currentProduct.CalculateSuggestedPrice(10m);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
 

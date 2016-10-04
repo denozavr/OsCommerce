@@ -50,7 +50,7 @@ namespace Os.BusinessLayer
             set { availabilityDate = value; }
         }
 
-
+        public decimal Cost { get; set; }
 
         private string productName;
 
@@ -117,6 +117,14 @@ namespace Os.BusinessLayer
         public string ProductCode => this.Category + "-" + this.SequenceNumber;
 
         #endregion
+
+        /// <summary>
+        /// Calculates the suggested retail price
+        /// </summary>
+        /// <param name="markupPercent">Percent used to mark up the cost.</param>
+        /// <returns></returns>
+        public decimal CalculateSuggestedPrice(decimal markupPercent) =>
+             this.Cost + (this.Cost * markupPercent / 100);
 
         public string PrintProduct()
         {
