@@ -21,36 +21,22 @@ namespace Os.BusinessLayer
         /// </summary>
         /// <param name="product">What to order</param>
         /// <param name="quantity">How much to order?</param>
+        /// <returns></returns>
+        public OperationResult PlaceOrder(Product product,int quantity )
+        {
+            return PlaceOrder(product, quantity, null, null);
+        }
+
+        /// <summary>
+        /// Sends product to vendor
+        /// </summary>
+        /// <param name="product">What to order</param>
+        /// <param name="quantity">How much to order?</param>
         /// <param name="deliverBy">When client get his order</param>
         /// <returns></returns>
-        public OperationResult PlaceOrder(Product product,int quantity, DateTimeOffset? deliverBy )
+        public OperationResult PlaceOrder(Product product, int quantity, DateTimeOffset? deliverBy)
         {
-            if(product == null)
-                throw new ArgumentNullException(nameof(product));//"product" before c# 6
-            if (quantity <= 0)
-                throw new ArgumentNullException(nameof(quantity));
-
-            var success = false;
-
-            var orderText = "Order from OsCom" + Environment.NewLine +
-                            "Product: " + product.ProductCode + Environment.NewLine +
-                            "Quantity: " + quantity;
-
-            if (deliverBy.HasValue)
-            {
-                orderText += System.Environment.NewLine +
-                            "Deliver By: " + deliverBy.Value.ToString("d");
-            }
-
-            var emailService = new EmailService();
-            var confirmation = emailService.SendMessage("New Order", orderText,
-                                                                     this.Email);
-            if (confirmation.StartsWith("Message sent:"))
-            {
-                success = true;
-            }
-            var operationResult = new OperationResult(success,orderText);
-            return operationResult;
+            return PlaceOrder(product, quantity, deliverBy, null);
         }
 
         /// <summary>
